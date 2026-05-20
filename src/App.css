@@ -36,3 +36,58 @@
     transform: rotate(360deg);
   }
 }
+
+
+form{
+  display: flex;
+  margin-inline: 40px;
+  gap: 20px;
+}
+
+form input{
+  height: 40%;
+  flex-basis: 80%;
+}
+
+form button{
+  flex-basis: 20%;
+}
+
+.outerDiv ul{
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+.outerDiv ul li{
+text-align: left;
+background-color: black;
+color: white;
+padding: 10px;
+margin: 30px 50px;
+position: relative;
+
+}
+
+.outerDiv ul li span{
+  position: absolute;
+  right: 15px;
+
+  cursor: pointer;
+  background-color: gray;
+  padding-inline: 8px;
+  border-radius: 20px;
+
+}
+
+.completetodo{
+  text-decoration: line-through !important;
+  color: red !important;
+  background-color: yellow !important;
+}
+
+
+
+
+
+
