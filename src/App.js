@@ -1,12 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
+import { tabs } from './tabs';
+import { tab } from '@testing-library/user-event/dist/tab';
 
 
 function App() {
 
 
+  // TODO LIST APP
+
+
   let [todolist, setTodolist] = useState([])
+
 
 
   let saveTodoList = (event) => {
@@ -31,12 +37,61 @@ function App() {
     )
   })
 
+  // TODO LIST APP END
+
+
+  // CREATE TABBING IN REACT.JS
+
+  let [activetabs, setactivetabs] = useState(0)
+  let [activeContent, setactiveContent] = useState(tabs[0])
+  let changeData = (i) => {
+    setactivetabs(i)
+    setactiveContent(tabs[i])
+  }
+
 
 
 
 
   return (
     <div className="App">
+
+      {/* CREATE TABBING IN REACT.JS */}
+
+      <div className='tabsOuter'>
+        <h1>Law Prep Vision Mission and Values</h1>
+        <ul>
+
+          {tabs.map((value, i) => {
+            return (
+              <div>
+                <li ><button onClick={() => changeData(i)} className={activetabs == i ? 'activeBtn' : ''}>{value.title}</button></li>
+              </div>
+
+
+            )
+          })}
+        </ul>
+        {activeContent !== undefined ? <p className='pp'>{activeContent.description}</p> : ''}
+      </div>
+
+      {/* CREATE TABBING IN REACT.JS END*/}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      {/* TODO LIST APP */}
       <div>
         <h1>TODO LIST PROJECT</h1>
         <form onSubmit={saveTodoList}>
@@ -52,11 +107,35 @@ function App() {
 
 
       </div>
+      {/* TODO LIST APP END */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
   );
 }
 
 export default App;
+
+
+// TODO LIST APP
 
 
 function TodoListItems({ value, setTodolist, indexNumber, todolist }) {
@@ -74,3 +153,6 @@ function TodoListItems({ value, setTodolist, indexNumber, todolist }) {
 
   )
 }
+
+// TODO LIST APP END
+

@@ -71,8 +71,9 @@ position: relative;
 
 .outerDiv ul li span{
   position: absolute;
-  right: 15px;
-
+  right: -5px;
+  top: -5px;
+font-size: 25px;
   cursor: pointer;
   background-color: gray;
   padding-inline: 8px;
@@ -84,6 +85,42 @@ position: relative;
   text-decoration: line-through !important;
   color: red !important;
   background-color: yellow !important;
+}
+
+.tabsOuter {
+width: 1170px;
+margin: auto;
+padding-left: 100px;
+}
+
+.tabsOuter ul{
+display: flex;
+margin: 0;
+padding: 0;
+gap: 10px;
+list-style: none;
+}
+
+
+.tabsOuter ul li button{
+
+background-color: rgb(219, 216, 216);
+color: black;
+padding: 0.5rem 20px;
+margin-right: 18px;
+font-weight: 600;
+border: none;
+cursor: pointer;
+
+}
+
+.pp{
+  text-align: left;
+}
+
+.activeBtn{
+  background-color: red !important;
+  color: white !important;
 }
 
 
